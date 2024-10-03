@@ -43,6 +43,7 @@ global.lolkeysapi = ['GataDios']
 //CONFIG VARS. Do not touch them⚠️
 
   global.vidcap = process.env.DL_MSG
+  global.session = process.env.SESSION_ID
 
 
 //💌------------------------------------------💌
