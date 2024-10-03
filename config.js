@@ -6,10 +6,8 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const ownervb = process.env.OWNERS;
-if (!ownervb){
-   throw new Error("OWNERS env is not set");
-}
+const ownervb = process.env.OWNERS|| "94754625969; HASA"
+
 
 const ownerlist = ownervb.split(';');
 
