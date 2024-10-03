@@ -122,7 +122,7 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {}
             if (chat) {
                 if (!("antiDelete" in chat)) chat.antiDelete = true
-                if (!("antiLink" in chat)) chat.antiLink = false
+                if (!("antiLink" in chat)) chat.antiLink = true
                 if (!("antiSticker" in chat)) chat.antiSticker = false
                 if (!("antiToxic" in chat)) chat.antiToxic = false
 		//if (!('anticall' in chat)) chat.antiCall = false
@@ -136,7 +136,7 @@ export async function handler(chatUpdate) {
                 if (!("sPromote" in chat)) chat.sPromote = ""
                 if (!("sWelcome" in chat)) chat.sWelcome = ""
                 if (!("useDocument" in chat)) chat.useDocument = false
-                if (!("viewOnce" in chat)) chat.viewOnce = false
+                if (!("viewOnce" in chat)) chat.viewOnce = true
                 if (!("viewStory" in chat)) chat.viewStory = false
 		if (!('antiBotClone' in chat)) chat.antiBotClone = false
                 if (!("welcome" in chat)) chat.welcome = false
@@ -145,7 +145,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.chats[m.chat] = {
                     antiDelete: true,
-                    antiLink: false,
+                    antiLink: true,
                  //   antiCall: false,
                     antiSticker: false,
                     antiToxic: false,
@@ -162,7 +162,7 @@ export async function handler(chatUpdate) {
                     sticker: false,
                     sWelcome: "",
                     useDocument: false,
-                    viewOnce: false,
+                    viewOnce: true,
                     viewStory: false,
                     welcome: false,
                     chatbot: false
@@ -219,7 +219,7 @@ export async function handler(chatUpdate) {
                 await delay(time)
             }, time)
         }
-         if (process.env.MODE && process.env.MODE.toLowerCase() === 'private' && !(isROwner || isOwner))
+         if (process.env.MODE && process.env.MODE.toLowerCase() === 'public' && !(isROwner || isOwner))
           return;
 
         
